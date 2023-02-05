@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="lib" path="D:/Dev/apache-tomcat-9.0.71/lib/servlet-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Dev/jackson-databind-2.14.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Dev/mapstruct-1.5.3.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Dev/activation-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Dev/javax.mail-1.6.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Dev/ojdbc6_g.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

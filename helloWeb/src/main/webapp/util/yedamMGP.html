@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>수강생관리 관리자 로그인</title>
+  </head>
+  <style>
+    #container {
+      width: 1002px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+    }
+    span {
+      color: red;
+    }
+    nav {
+      background-color: rgb(94, 253, 94);
+      height: 40px;
+      overflow: hidden;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+    }
+    li {
+      text-align: center;
+      display: inline-block;
+      font-weight: bold;
+      line-height: 40px;
+      font-size: 20px;
+      margin: 0;
+      width: 110px;
+    }
+    .right {
+      float: right;
+      margin-right: 20px;
+    }
+    li:hover {
+      background-color: black;
+      color: rgb(94, 253, 94);
+    }
+    .all {
+      border: 1px solid black;
+      width: 1000px;
+      height: 100%;
+    }
+    #info {
+      border: 1px solid black;
+      width: 1000px;
+      height: 100%;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <header>
+        <h1>예담직업전문학교</h1>
+        <h2>수강생 관리자 "<span> yedam </span>" 접속이 되었습니다</h2>
+      </header>
+      <nav>
+        <ul>
+          <li id="allStu">전체 수강생</li>
+          <li id="search">수강생 검색</li>
+          <li id="addStu">수강생 등록</li>
+          <li id="update">정보 수정</li>
+          <li id="del">정보 삭제</li>
+          <li id="sendMail">정보 전송</li>
+          <li id="logout" class="right">로그 아웃</li>
+        </ul>
+      </nav>
+      <div id="info"></div>
+    </div>
+    <script>
+      allStu.addEventListener("click", () => {
+        let allStu = document.querySelector("#info");
+        allStu.className = "all";
+      });
+      search.addEventListener("click", () => {
+        let search = document.querySelector("#info");
+        search.className = "search";
+      });
+      addStu.addEventListener("click", () => {
+        let addStu = document.querySelector("#info");
+        addStu.className = "addStu";
+      });
+      update.addEventListener("click", () => {
+        let update = document.querySelector("#info");
+        update.className = "update";
+      });
+      del.addEventListener("click", () => {
+        let del = document.querySelector("#info");
+        del.className = "adelll";
+      });
+      sendMail.addEventListener("click", () => {
+        let sendMail = document.querySelector("#info");
+        sendMail.className = "sendMail";
+      });
+
+      logout.addEventListener("click", () => {
+        window.location.href = "yedam.html";
+      });
+    </script>
+  </body>
+</html>

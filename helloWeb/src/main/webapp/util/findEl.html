@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>util/findEl.html</title>
+  </head>
+  <style>
+    div.outer {
+      background-color: yellow;
+      width: 510px;
+      padding: 10px;
+      height: 350px;
+    }
+    div.inner {
+      text-align: center;
+      display: inline-block;
+      background-color: aqua;
+      height: 30px;
+      width: 120px;
+      margin: 2px;
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <div id="list" class="outer"></div>
+    <input type="text" id="search" />
+    <button id="btn">제거</button>
+    <div id="timer"></div>
+    <script>
+      let words = `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum magni magnam eius quibusdam corporis dolore numquam hic libero laborum. Blanditiis accusamus ex sapiente neque voluptates saepe qui sit repellat fugiat!`;
+
+      let items = words.split(" ");
+
+      items.forEach((word) => {
+        let div = document.createElement("div");
+        list.append(div);
+        div.setAttribute("class", "inner");
+        div.innerText = word;
+      });
+
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".inner").forEach((word) => {
+          if (word.innerText == search.value) {
+            word.remove();
+          }
+          if (!document.querySelectorAll(".inner").length) {
+            alert("OK");
+            clearInterval(itv);
+          }
+        });
+        search.value = "";
+        search.focus();
+      });
+
+      let cnt = 50;
+      let itv = setInterval(() => {
+        if (cnt == 0) {
+          alert("done");
+          clearInterval(itv);
+          cnt = 5;
+        }
+        timer.innerText = --cnt;
+      }, 1000);
+    </script>
+  </body>
+</html>

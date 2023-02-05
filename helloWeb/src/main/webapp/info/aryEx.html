@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>info/aryEx.html</title>
+  </head>
+
+  <body>
+    <div id="show">
+      <table border="1">
+        <thead id="head"></thead>
+        <tbody id="list"></tbody>
+      </table>
+    </div>
+    <script>
+      const fruits = [
+        { name: "apple", price: 4000, like: 3.5 },
+        { name: "banana", price: 2000, like: 4.5 },
+        { name: "cherry", price: 3000, like: 5 },
+      ];
+      const titles = ["과일", "가격", "별점"];
+      titles.forEach((title) => {
+        let th = document.createElement("th");
+        th.innerText = title;
+        head.append(th);
+      });
+
+      // fruits를 reduce를 이용해 반복함
+      //accum 값을 tr 더 해줌
+      // 그 값을 id가 list인 곳에 넣는다 !
+      let result = fruits.reduce((accum, item, index) => {
+        let tr = document.createElement("tr");
+        for (let prop in item) {
+          let td = document.createElement("td");
+          td.innerText = item[prop];
+          tr.append(td);
+        }
+        accum.append(tr);
+        return accum;
+      }, document.getElementById("list"));
+
+      // //forEach 는 베열 값들을 가져옴
+      // fruits.forEach((fruit, index, array) => {
+      //   if (fruit.like > 0) {
+      //     console.log(fruit);
+      //     console.log(fruit.name);
+      //     console.log(fruit["price"]);
+      //     let tr = document.createElement("tr");
+      //     // for ( ... in ...) 객체 속성 반복
+      //     // ftuit 객체 속성을 하나하나 prop으로 가져옴
+      //     for (let prop in fruit) {
+      //       let td = document.createElement("td");
+      //       td.innerText = fruit[prop];
+      //       tr.append(td);
+      //     }
+      //     list.append(tr);
+      //   }
+      // });
+
+      // //별점 4이상 요소를 over4 에 저장
+      // let over4 = [];
+      // // 배열에서 만족하는 값만 새로운 배열에 줌
+      // over4 = fruits.filter((fruit) => fruit.like > 4);
+      // console.log(over4);
+      // // forEach 방법
+      // // fruits.forEach((fruit) => {
+      // //   if (fruit.like > 4) {
+      // //     over4.push(fruit);
+      // //   }
+      // // });
+
+      // // id가 list인 tr들을 불러오고 forEach 돌림
+      // document.querySelectorAll("#list tr").forEach((tr) => {
+      //   tr.firstChild.style.backgroundColor = "yellow";
+      // });
+
+      // let nFruits = fruits.map((fruit, index) => {
+      //   let nFruit = {};
+      //   nFruit.ord = index + 1;
+      //   nFruit.fname = fruit.name;
+      //   nFruit.price = fruit.price;
+      //   return nFruit;
+      // });
+      // console.log(nFruits);
+
+      // // fruits 의 배열에 있는 가격의 합
+      // let priceSum = 0;
+      // fruits.forEach((fruit) => {
+      //   priceSum += fruit.price;
+      // });
+      // console.log("가격의 합 : ", priceSum);
+      // console.clear();
+      // // 3 건
+      // //매개변수의 양상이 좀 다르다
+      // //현순번의 이전값을 가져옴
+      // let result = fruits.reduce((accum, item, index, array) => {
+      //   console.log(accum, item, index, array);
+      //   // 반환값이 다음 순번의 초기값 ( accum )
+      //   return accum > item.price ? accum : item.price;
+      // }, 0); //초기값 주는거
+      // console.log("결과 ", result);
+
+      // // 평점평균 계산
+      // result = fruits.reduce((accum, item, index, array) => {
+      //   console.log(accum, item, index, array);
+      //   // 반환값이 다음 순번의 초기값 ( accum )
+      //   return (accum += item.like / fruits.length);
+      // }, 0); //초기값 주는거
+      // console.log("결과 ", result);
+    </script>
+  </body>
+</html>

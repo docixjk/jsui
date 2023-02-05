@@ -1,0 +1,65 @@
+<!-- http://localhost:8081/helloWeb/info/memberList.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>info/memberList.html</title>
+  </head>
+  <body>
+    <h3>fetch API를 활용.</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>아이디</th>
+          <th>이름</th>
+          <th>이메일</th>
+          <th>성별</th>
+          <th>급여</th>
+        </tr>
+      </thead>
+      <tbody id="list"></tbody>
+    </table>
+
+    <script>
+      fetch("../data/data.json")
+        .then((resolve) => resolve.json())
+        .then((result) => {
+          // console.log(result);
+          // 배열관련 메소드 :forEach map: a타입을 받아서 b로 출력 filter: 조건 만족한 것만 출력 reduce: 앞의 메소드를 가지고 여러가지 만들 수 있음.
+          result.forEach(function (item, idx, arry) {
+            //DOM 요소생성
+            let titles = ["id", "first_name", "email", "gender", "salary"];
+            //데이터 건수만큼 반복
+            let tr = document.createElement("tr"); //데이터 한줄
+            //columns 개수만큼 반복
+            titles.forEach(function (title) {
+              let td = document.createElement("td"); //칼럼
+              td.innerText = item[title];
+              tr.append(td); //td는 tr의 하위요소라서 append사용
+            });
+            //삭제. 하나의 row삭제
+            let td = document.createElement("td");
+            let btn = document.createElement("button");
+            btn.innerText = "삭제";
+            btn.addEventListener("click", function () {
+              console.log(this.parentElement.parentElement); //이벤트대상은 btn 의 부모 tr 부모 td
+              this.parentElement.parentElement.remove();
+            });
+            td.append(btn);
+            tr.append(td);
+
+            console.log(tr); //콘솔창으로 확인하기 위해서 넣음. 없어도 됨.
+            list.append(tr); //tbody안에 데이터가 들어옴.
+          }); // result 배열에 등록된 값의 개수만큼 for문 실행(배열에서 가능한 forEach 메소드 매개변수로 함수도 가능)
+        })
+        // 에러가 생기면 콜백함수로 확인
+        .catch((reject) => {
+          console.log(reject);
+        });
+
+      // this => function() {}안에서 사용되면 this는 window전역객체를 가르킨다.
+      // this => envet의 callback function() {this => event대상.}
+    </script>
+  </body>
+</html>

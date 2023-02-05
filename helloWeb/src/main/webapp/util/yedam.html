@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>예담직업전문학교 수강생관리</title>
+  </head>
+  <body>
+    <h1>예담직업전문학교</h1>
+    <h2>수강생관리 프로그램</h2>
+    <label for="user_id"
+      >관리자 아이디 <input type="text" id="id" name="user_id" /></label
+    ><br />
+    <label for="user_pw"
+      >관리자 비 번 <input type="text" id="pw" name="user_pw"
+    /></label>
+    <button id="btn">로그인</button>
+    <script>
+      btn.addEventListener("click", () => {
+        let id = document.querySelector("#id").value;
+        let pw = document.querySelector("#pw").value;
+
+        if (id == "yedam" && pw == "yedam") {
+          window.location.href = "yedamMGP.html";
+          alert("관리자님 접속을 환영합니다");
+        } else {
+          alert("관리자 ID와 PW를 확인해주세요");
+        }
+      });
+    </script>
+  </body>
+</html>
