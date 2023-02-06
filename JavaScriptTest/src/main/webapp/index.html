@@ -1,61 +1,119 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <style>
+      * {
+        text-align: center;
+      }
+      html {
+        background-image: url("../webapp/images/bono.jpg");
+        background-size: cover;
+      }
+      #show {
+        margin: 0 auto;
+        width: 800px;
+      }
+      #titles {
+        float: left;
+        width: 650px;
+        height: 150px;
+      }
+      #titles input {
+        width: 450px;
+        margin: 5px;
+        height: 20px;
+        border-radius: 5px;
+        background: linear-gradient(90deg, #b4b1b3, #f3dcc3);
+      }
+      .sm {
+        width: 30px;
+      }
+      .del {
+        width: 100px;
+      }
+      th {
+        height: 30px;
+        padding-bottom: 2px;
+      }
+      td {
+        width: 200px;
+      }
+      .field {
+        line-height: 26px;
+        display: inline-block;
+        width: 130px;
+        background-color: rgb(209, 208, 207);
+      }
+      #btns {
+        height: 150px;
+        width: 130px;
+        display: inline-block;
+        padding-top: 40px;
+      }
+      #btns button {
+        margin: 5px;
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        font-weight: bold;
+      }
+      #add {
+        background-color: rgb(130, 130, 253);
+      }
+      #checkDel {
+        background-color: rgb(247, 115, 115);
+      }
+      #tbl {
+        border: 1px solid black;
+        clear: both;
+        margin: 0 auto;
+      }
+      #title tr {
+        background-color: rgb(182, 182, 182);
+      }
+      #list button {
+        background-color: rgb(247, 115, 115);
+        border: none;
+        width: 60px;
+        height: 25px;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      #list {
+        color: white;
+      }
+    </style>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<title>Insert title here</title>
-	<style>
-		#show {
-			text-align: center;
-			width: 1000px;
-		}
-
-		#titles {
-			float: left;
-			width: 600px;
-		}
-
-		.field {
-			width: 300px;
-			background-color: rgb(192, 192, 192);
-			line-height: 30px;
-			font-size: 15px;
-		}
-
-		#btns {
-			float: left;
-			width: 400px;
-		}
-
-		#tbl {
-			display: inline;
-			width: 1000px;
-		}
-	</style>
-</head>
-
-<body>
-	<div id="show">
-		<h3>도서목록 페이지</h3>
-		<hr>
-		<div id="titles">
-			<label class="field">도서코드</label> <input type="text" name="bookCode" id="bookCode"><br>
-			<label class="field">도서명</label> <input type="text" name="bookName" id="bookName"><br>
-			<label class="field">저자</label> <input type="text" name="author" id="author"><br>
-			<label class="field">출판사</label> <input type="text" name="press" id="press"><br>
-			<label class="field">금액</label> <input type="text" name="price" id="price"><br>
-		</div>
-		<div id="btns">
-			<button type="button" id="add">저장</button>
-			<br>
-			<button type="button" id="checkDel">선택삭제</button>
-		</div>
-		<table id="tbl">
-			<thead id="title"></thead>
-			<tbody id="list"></tbody>
-		</table>
-	</div>
-	<script src="js/book.js"></script>
-</body>
-
+  <body>
+    <div id="show">
+      <h3>도서목록 페이지</h3>
+      <hr />
+      <div id="titles">
+        <label class="field">도서코드</label>
+        <input type="text" name="bookCode" id="bookCode" /><br />
+        <label class="field">도서명</label>
+        <input type="text" name="bookName" id="bookName" /><br />
+        <label class="field">저자</label>
+        <input type="text" name="author" id="author" /><br />
+        <label class="field">출판사</label>
+        <input type="text" name="press" id="press" /><br />
+        <label class="field">금액</label>
+        <input type="text" name="price" id="price" /><br />
+      </div>
+      <div id="btns">
+        <button type="button" id="add">저장</button>
+        <br />
+        <button type="button" id="checkDel">선택삭제</button>
+      </div>
+      <table id="tbl">
+        <thead id="title"></thead>
+        <tbody id="list"></tbody>
+      </table>
+    </div>
+    <script src="js/book.js"></script>
+  </body>
 </html>

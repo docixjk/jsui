@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="org.eclipse.jdt.ui.lastextjar" value="D:\Dev"/>
+	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Dev\apache-tomcat-9.0.71\lib"/>
 	<section name="JavaElementSearchActions">
 	</section>
 	<section name="NewPackageWizardPage">
