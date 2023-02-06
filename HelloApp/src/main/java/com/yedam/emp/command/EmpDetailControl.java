@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.common.Command;
 import com.yedam.emp.service.EmpService;
-import com.yedam.emp.service.EmpServiceImpl;
-import com.yedam.vo.EmpVO;
+import com.yedam.emp.service.EmpServiceMybatis;
+import com.yedam.emp.vo.EmpVO;
 
 public class EmpDetailControl implements Command {
 
@@ -20,7 +20,7 @@ public class EmpDetailControl implements Command {
 		
 		String id = req.getParameter("eid");
 		
-		EmpService service = new EmpServiceImpl();
+		EmpService service = new EmpServiceMybatis();
 		EmpVO emp = service.getEmp(Integer.parseInt(id));
 		
 		// 요청 정보에다가 searchVO라는 이름으로 emp 객체의 참조주소값이 들어감

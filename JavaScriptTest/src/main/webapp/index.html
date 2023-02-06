@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		#show {
+			text-align: center;
+			width: 1000px;
+		}
+
+		#titles {
+			float: left;
+			width: 600px;
+		}
+
+		.field {
+			width: 300px;
+			background-color: rgb(192, 192, 192);
+			line-height: 30px;
+			font-size: 15px;
+		}
+
+		#btns {
+			float: left;
+			width: 400px;
+		}
+
+		#tbl {
+			display: inline;
+			width: 1000px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="show">
+		<h3>도서목록 페이지</h3>
+		<hr>
+		<div id="titles">
+			<label class="field">도서코드</label> <input type="text" name="bookCode" id="bookCode"><br>
+			<label class="field">도서명</label> <input type="text" name="bookName" id="bookName"><br>
+			<label class="field">저자</label> <input type="text" name="author" id="author"><br>
+			<label class="field">출판사</label> <input type="text" name="press" id="press"><br>
+			<label class="field">금액</label> <input type="text" name="price" id="price"><br>
+		</div>
+		<div id="btns">
+			<button type="button" id="add">저장</button>
+			<br>
+			<button type="button" id="checkDel">선택삭제</button>
+		</div>
+		<table id="tbl">
+			<thead id="title"></thead>
+			<tbody id="list"></tbody>
+		</table>
+	</div>
+	<script src="js/book.js"></script>
+</body>
+
+</html>
