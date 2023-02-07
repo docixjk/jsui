@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>result/addResult</title>
+<title>result/addResult.jsp</title>
 </head>
 <body>
-
-	<h3>입력이 처리되었습니다!</h3>
-
+ <h3>입력이 처리되었습니다!</h3>
 </body>
 </html>

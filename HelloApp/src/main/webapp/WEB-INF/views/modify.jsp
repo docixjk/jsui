@@ -1,51 +1,43 @@
-<%@page import="com.yedam.emp.vo.EmpVO" %>
-	<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-		<jsp:include page="../includes/header.jsp"></jsp:include>
+<%@page import="co.yedam.emp.vo.EmpVO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<jsp:include page="../includes/header.jsp"></jsp:include>
+<%
+  EmpVO emp = (EmpVO) request.getAttribute("svo");
+%>
 
-		<% //리턴되는 타입은 객체타입 // 아까 컨트롤러에서 넘겨준 요청정보에 searchVO가 참조하고있는 주소값을 가져옴 
-			EmpVO emp = (EmpVO)request.getAttribute("searchVO");
-		%>
+<h3>현재 페이지는 empModForm.do의 결과 modify.jsp 입니다.</h3>
+<form action="./empModify.do" method="get">
+	<table class="table">
+		<tr>
+			<th>사원번호</th>
+			<td><input type="text" value="<%=emp.getEmployeeId()%>" name="eid" readonly /></td>
+		</tr>
+		<tr>
+			<th>FistName</th>
+			<td><input type="text" value="<%=emp.getFirstName()%>" name="fname" /></td>
+		</tr>
+		<tr>
+			<th>LastName</th>
+			<td><input type="text" value="<%=emp.getLastName()%>" name="lname" /></td>
+		</tr>
+		<tr>
+			<th>메일</th>
+			<td><input type="text" value="<%=emp.getEmail()%>" name="email" /></td>
+		</tr>
+		<tr>
+			<th>직무</th>
+			<td><input type="text" value="<%=emp.getJobId()%>" name="job" /></td>
+		</tr>
+		<tr>
+			<th>입사일자</th>
+			<td><input type="text" value="<%=emp.getHireDate().substring(0,10) %>" name="hire" /></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" class="btn btn-primary" value="변경">
+			</td>
+	</table>
+</form>
 
-			<h3>현재 페이지는 empModForm.do의 결과 modify.jsp입니다.</h3>
-			<form action="./empModify.do" method="post">
-				<table class="table">
-					<tr>
-						<th>사원번호</th>
-						<td><input readOnly type="text" name="eid" value="<%=emp.getEmployeeId()%>"></td>
-					</tr>
-					<tr>
-						<th>FirstName</th>
-						<td><input type="text" name="fname" value="<%=emp.getFirstName()%>"></td>
-					</tr>
-					<tr>
-						<th>LastName</th>
-						<td><input type="text" name="lname" value="<%=emp.getLastName()%>"></td>
-					</tr>
-					<tr>
-						<th>이메일</th>
-						<td><input type="text" name="email" value="<%=emp.getEmail()%>"></td>
-					</tr>
-					<tr>
-						<th>직무</th>
-						<td><input type="text" name="job" value="<%=emp.getJobId()%>"></td>
-						<!-- emp.getJobId() -->
-						<!-- <select name="job"> 
-								<option value="IT_PROG" selected>개발자</option>
-								<option value="SA_REP" selected>영업사원</option>
-								<option value="SA_MAN" selected>영업팀장</option>
-							</select> -->
-					</tr>
-					<tr>
-						<th>입사일자</th>
-						<td><input type="text" name="hire" value="<%=emp.getHireDate()%>"></td>
-					</tr>
-					<tr>
-						<td colspan="2" align="center">
-							<button class="btn btn-primary" onclick="location.href='empDetail.do'">변경</button>
-						</td>
-					</tr>
-				</table>
-			</form>
-
-
-			<jsp:include page="../includes/footer.jsp"></jsp:include>
+<jsp:include page="../includes/footer.jsp"></jsp:include>

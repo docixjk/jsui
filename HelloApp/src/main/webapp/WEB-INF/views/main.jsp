@@ -13,6 +13,4 @@
                         ID which will toggle the menu when clicked.
                     </p>
                 </div>
-<jsp:include page="../includes/footer.jsp"></jsp:include>
-            
-    
+<jsp:include page="../includes/footer.jsp"></jsp:include>         

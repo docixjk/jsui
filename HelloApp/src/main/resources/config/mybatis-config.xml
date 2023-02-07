@@ -3,9 +3,14 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<settings>
-		<setting name="mapUnderscoreToCamelCase" value="true"></setting>
-	</settings>
+ <settings>
+ 	<setting name="mapUnderscoreToCamelCase" value="true"></setting>
+ 	<setting name="jdbcTypeForNull" value="NULL"/>
+ </settings>
+ <typeAliases>
+ <!-- typeAlias를 이용해 쉽게 입력 할 수 있다. -->
+ 	<typeAlias alias="MemberVO" type="co.yedam.member.vo.MemberVO"/>
+ </typeAliases>
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>
@@ -18,7 +23,7 @@
     </environment>
   </environments>
   <mappers>
-    <mapper resource="com/yedam/emp/mapper/EmpMapper.xml"/>
-    <!-- 여기있는 값으로 쿼리를 실행 한다 -->
+    <mapper resource="co/yedam/emp/mapper/EmpMapper.xml"/>
+    <mapper class="co.yedam.member.mapper.MemberMapper" />
   </mappers>
 </configuration>

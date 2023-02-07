@@ -1,10 +1,2 @@
 eclipse.preferences.version=1
-fullcoverage_stylePreferences=NONE
-fullcoverage_text=false
-linked.focus.color=255,0,128
-nocoverage_stylePreferences=NONE
-nocoverage_text=false
-partialcoverage_stylePreferences=NONE
-partialcoverage_text=false
 tabWidth=2
-taskIndicationColor=0,255,0
