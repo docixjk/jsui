@@ -137,8 +137,8 @@ hr {
 			<label for="member_phone"><b>Member Phone</b></label>
 			<input type="text" placeholder="Enter Phone" name="member_phone" required>
 			
-			<label for="Member_image"><b>Member Image</b></label>
-			<input type="file" multiple="multiple" name="Member_image" required>
+			<label for="member_image"><b>Member Image</b></label>
+			<input type="file" multiple="multiple" name="member_image" required>
 			
 			<div class="clearfix">
 				<button type="button" class="cancelbtn">Cancel</button>

@@ -1,1 +1,6 @@
 /.metadata/
+*.project
+.classpath
+.DS_Store
+org.*
+*.jsdtscope
