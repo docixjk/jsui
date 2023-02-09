@@ -13,23 +13,23 @@ public class MemberServiceMybatis implements MemberService {
 	MemberMapper mapper = session.getMapper(MemberMapper.class);
 	@Override
 	public MemberVO login(MemberVO member) {
-		// TODO Auto-generated method stub
 		return mapper.login(member); // session.selectOne("네임스페이스.id값");
 	}
 	@Override
 	public int addMember(MemberVO member) {
-		// TODO Auto-generated method stub
 		return mapper.addMember(member);
 	}
 	@Override
 	public List<MemberVO> memberList() {
-		// TODO Auto-generated method stub
 		return mapper.memberList();
 	}
 	@Override
 	public MemberVO getMember(String id) {
-		// TODO Auto-generated method stub
 		return mapper.getMember(id);
+	}
+	@Override
+	public int modifyMember(MemberVO member) {
+		return mapper.updateMember(member);
 	}
 
 }

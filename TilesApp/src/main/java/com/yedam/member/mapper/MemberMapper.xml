@@ -5,19 +5,26 @@
 
 <mapper namespace="com.yedam.member.mapper.MemberMapper">
 	<select id="login" resultType="MemberVO">
-		select * from members where member_id=#{memberId} and member_pw=#{memberPw}
+		SELECT * FROM members WHERE member_id=#{memberId} AND member_pw=#{memberPw}
 	</select>
 	
 	<insert id="addMember" parameterType="MemberVO">
-		insert into members(member_id, member_pw, member_name, member_phone, responsibility, image)
-		values(#{memberId},#{memberPw},#{memberName}, #{memberPhone}, 'user', #{image})
+		INSERT INTO members(member_id, member_pw, member_name, member_phone, responsibility, image)
+		VALUES(#{memberId},#{memberPw},#{memberName}, #{memberPhone}, 'user', #{image})
 	</insert>
 	
 	<select id="memberList" resultType="MemberVO">
-		select * from members order by member_id
+		SELECT * FROM members ORDER BY member_id
 	</select>
 	
 	<select id="getMember" parameterType="string" resultType="MemberVO">
-		select * from members where member_id=#{id}
+		SELECT * FROM members WHERE member_id=#{id}
 	</select>
+	
+	<update id="updateMember" parameterType="MemberVO">
+     UPDATE members
+     SET member_name=#{memberName}, member_pw=#{memberPw}, member_phone=#{memberPhone}, member_addr=#{memberAddr}
+     WHERE member_id=#{memberId}
+    </update>
+	
 </mapper>

@@ -16,7 +16,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="notice" items="${list }"> //noticelistcont에서 받아오기로 한 값을 적음
+				<c:forEach var="notice" items="${list}"> <!-- noticelistcont에서 받아오기로 한 값을 적음 -->
 					<tr>
 						<td><a href="noticeDetail.do?nid=${notice.noticeId}">${notice.noticeId }</a></td>
 						<td>${notice.noticeWriter }</td>

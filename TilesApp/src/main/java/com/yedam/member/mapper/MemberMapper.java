@@ -9,4 +9,5 @@ public interface MemberMapper {
 	public int addMember(MemberVO member); //등록.
 	public List<MemberVO> memberList(); //회원전체목록.
 	public MemberVO getMember(String id); //회원정보조회.
+	public int updateMember(MemberVO member);//회원정보수정
 }

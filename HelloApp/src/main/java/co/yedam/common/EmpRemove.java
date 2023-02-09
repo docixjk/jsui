@@ -14,7 +14,6 @@ public class EmpRemove implements Command {
 	//0206 3교시
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) {
-		// TODO Auto-generated method stub
 		String id = req.getParameter("id");
         //삭제처리 Empservice -> EmpServiceImpl -> EmpDAO
 		//0207 2교시 수정 EmpServiceImpl();을 EmpServiceMybatis();
@@ -31,7 +30,6 @@ public class EmpRemove implements Command {
 			try {
 				resp.sendRedirect("errorPage.do");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

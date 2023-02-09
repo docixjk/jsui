@@ -18,7 +18,7 @@ public class AddReply implements Command {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		String title = req.getParameter("title");
 		String subject = req.getParameter("subject");
 		String writer = req.getParameter("writer");
@@ -35,7 +35,6 @@ public class AddReply implements Command {
 		service.addReply(vo);
 		
 		
-		System.out.println(vo);
 		System.out.println(vo);
 		
 		Gson gson = new GsonBuilder().create();

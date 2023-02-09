@@ -12,7 +12,6 @@ public class Logout implements Command {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		req.getSession().invalidate();
 		return "loginForm.do";
 	}
