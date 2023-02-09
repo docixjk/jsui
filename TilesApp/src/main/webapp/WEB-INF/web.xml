@@ -5,11 +5,9 @@
 	id="WebApp_ID" version="4.0">
 	<display-name>TilesApp</display-name>
 
-
 	<listener>
 		<listener-class>org.apache.tiles.extras.complete.CompleteAutoloadTilesListener</listener-class>
 	</listener>
-
 
 	<servlet>
 		<servlet-name>Tiles Dispatch Servlet</servlet-name>
@@ -20,7 +18,6 @@
 		<url-pattern>*.tiles</url-pattern>
 	</servlet-mapping>
 
-	<!-- 우리가 서블릿을 사용하기 위해 새로만든 패키지와 클래스 -->
 	<servlet>
 		<servlet-name>frontControl</servlet-name>
 		<servlet-class>com.yedam.common.FrontController</servlet-class>
@@ -29,7 +26,6 @@
 			<param-value>UTF-8</param-value>
 		</init-param>
 	</servlet>
-	<!-- *.do로 요청 들어오면 실행 -->
 	<servlet-mapping>
 		<servlet-name>frontControl</servlet-name>
 		<url-pattern>*.do</url-pattern>
@@ -38,6 +34,5 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-
 
 </web-app>

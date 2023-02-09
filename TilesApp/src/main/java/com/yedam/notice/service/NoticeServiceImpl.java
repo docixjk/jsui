@@ -7,16 +7,16 @@ import org.apache.ibatis.session.SqlSession;
 import com.yedam.common.DataSource;
 import com.yedam.notice.mapper.NoticeMapper;
 import com.yedam.notice.vo.NoticeVO;
+import com.yedam.notice.vo.ReplyVO;
 
 public class NoticeServiceImpl implements NoticeService {
-	
+
 	SqlSession session = DataSource.getInstance().openSession(true);
 	NoticeMapper mapper = session.getMapper(NoticeMapper.class);
-	// 내포파일과 인터페이스를 매핑 해주는 작업이 이루어 지는것 같다..?
+	//NoticeService service = new NoticeServiceImpl();
+	//session.selectOne("com.yedam.notice.mapper.NoticMapper.getNotice")
 	
-	// 인터페이스가 가지고 있는 메소드만 사용하더라도 실행이 됐다.
-	// NoticeService service = new NoticeServiceImpl();
-	// session.selectOne("com.yedam.notice.mapper.NoticeMapper.getNotice")
+	
 	
 	@Override
 	public List<NoticeVO> noticeList() {
@@ -25,7 +25,7 @@ public class NoticeServiceImpl implements NoticeService {
 
 	@Override
 	public NoticeVO getNotice(int nid) {
-		mapper.increaseCnt(nid); // 조회할 때 마다 카운트 증가
+		mapper.increaseCnt(nid); //카운트증가.
 		return mapper.searchOne(nid);
 	}
 
@@ -43,5 +43,23 @@ public class NoticeServiceImpl implements NoticeService {
 	public int remNotice(int nid) {
 		return mapper.deleteNotice(nid);
 	}
-	
+
+	@Override
+	public List<ReplyVO> replyList(int nid) {
+		// TODO Auto-generated method stub
+		return mapper.replyList(nid);
+	}
+
+	@Override
+	public int removeReply(int rid) {
+
+		return mapper.deleteReply(rid);
+	}
+
+	@Override
+	public int addReply(ReplyVO reply) {
+		// TODO Auto-generated method stub
+		return mapper.insertReply(reply);
+	}
+
 }
