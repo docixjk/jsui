@@ -4,7 +4,7 @@
 
 <h3>현재 페이지는 loginForm.do의 결과 login.jsp 입니다.</h3>
 <c:if test="${result != null }">
-	<c:out value="${result }"></c:out>
+	<c:out value="${result}"></c:out>
 </c:if>
 <%
 	String msg = (String) request.getAttribute("result");

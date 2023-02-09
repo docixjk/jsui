@@ -32,10 +32,18 @@ public class ModifyMember implements Command {
 		
 		MemberService service = new MemberServiceMybatis();
 		
-		if(service.modifyMember(vo)>0) {
-			return "noticeList.do";
-		}else {
+		
+		MemberVO mvo = service.getMember(id);
+		
+		if( nm.equals(mvo.getMemberName()) && 
+				pw.equals(mvo.getMemberPw()) &&
+				ph.equals(mvo.getMemberPhone()) &&
+				ad.equals(mvo.getMemberAddr())) 
+		{
 			return "member/mypage.tiles";
+		} else {
+			service.modifyMember(vo);
+			return "noticeList.do";
 		}
 		
 	}
