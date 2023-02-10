@@ -30,18 +30,18 @@ public class Login implements Command {
 		MemberVO mvo = service.login(vo);
 		
 		String page = "";
-		if (service.login(vo) != null) {
+		if (mvo != null) {
+			
 			// session 에 로그인 정보를 담아서..
 			HttpSession session = req.getSession();
 			
-			session.setAttribute("logId", mvo.getMemberId());
-			session.setAttribute("logName", mvo.getMemberName());
-
+			session.setAttribute("logId", mvo.getMemberId()); // 로그인된 ID
+			session.setAttribute("logName", mvo.getMemberName()); // 로그인된 PW
+			session.setAttribute("image", mvo.getImage()); // 로그인된 이미지
+			session.setAttribute("Auth", mvo.getResponsibility());
+			
 			MemberVO mvo2 = service.getMember(id);
-			
-			
-			session.setAttribute("vo", mvo2);
-			
+			session.setAttribute("vo", mvo2); // 로그인된 ID의 정보
 			// 이동할 페이지를 지정.
 			page = "mypage";
 		} else {
