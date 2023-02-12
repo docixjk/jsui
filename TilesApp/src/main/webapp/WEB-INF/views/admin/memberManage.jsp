@@ -37,7 +37,7 @@
         <tr>
             <th>Image</th>
             <td>
-                <input type="file" name="mimage" id="mimage">
+                <input type="file" name="mimage" id="mimage" multiple="multiple">
             </td>
         </tr>
         <tr>

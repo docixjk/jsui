@@ -30,6 +30,7 @@ public class FrontController extends HttpServlet {
 
 		map.put("/main.do", new MainControl());
 		map.put("/second.do", new SecondControl());
+		
 		// 공지사항.
 		map.put("/noticeList.do", new NoticeList());
 		map.put("/noticeDetail.do", new NoticeDetail());
@@ -50,10 +51,11 @@ public class FrontController extends HttpServlet {
 		map.put("/imageUpload.do", new ImageUpload()); // 이미지업로드
 		
 		// 관리자 회원관리
-		map.put("/memberManageForm.do", new MemberManager());
-		map.put("/memberList.do", new MemberList());
-		map.put("/addMember.do", new AddMember());
-		map.put("/removeMember.do", new removeMember());
+		map.put("/memberManageForm.do", new MemberManager()); // 관리자 화면 등록 폼
+		map.put("/memberList.do", new MemberList()); //관리자 화면 리스트
+		map.put("/addMember.do", new AddMember()); //관리자 화면에서 등록
+		map.put("/removeMember.do", new removeMember()); //관리자 화면에서 삭제
+		map.put("/updateMember.do", new MemberModify()); //관리자 화면에서 수정
 	}
 
 	@Override
@@ -78,7 +80,6 @@ public class FrontController extends HttpServlet {
 
 		} else if (viewPage.endsWith(".json")) {
 			resp.setContentType("text/json;charset=utf-8");
-			
 			resp.getWriter().print(viewPage.substring(0, viewPage.length() - 5));
 		}
 
