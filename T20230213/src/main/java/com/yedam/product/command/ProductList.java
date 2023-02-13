@@ -9,14 +9,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.common.Command;
 import com.yedam.product.service.ProductService;
-import com.yedam.product.service.ProductServiceMybatis;
+import com.yedam.product.service.ProductServiceImpl;
 
 public class ProductList implements Command {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		ProductService service = new ProductServiceMybatis();
+		ProductService service = new ProductServiceImpl();
+		// list라는 녀석에 service를 거친 리스트를 넘겨줌
 		req.setAttribute("list", service.productList());
 
 		return "product/productList.tiles"; // 프론트콘트롤러에서 쓸 수 있게 붙여주자

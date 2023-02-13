@@ -1,18 +1,12 @@
 package com.yedam.common;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-import com.yedam.product.command.ProductDetail;
-import com.yedam.product.command.ProductList;
+import com.yedam.product.command.*;
 
 public class FrontController extends HttpServlet {
 
@@ -28,9 +22,9 @@ public class FrontController extends HttpServlet {
 
 		charset = config.getInitParameter("charset");
 
-		map.put("/main.do", new MainControl());
-		map.put("/productDetail.do",new ProductDetail());
-		map.put("/productList.do", new ProductList());
+		map.put("/productList.do", new ProductList()); // 상품 전체 목록
+		map.put("/productDetail.do",new ProductDetail()); // 상품 상세 조회
+		map.put("/productrelated.do", new ProductRelated()); // 상품 인기 목록
 
 	}
 
@@ -47,11 +41,15 @@ public class FrontController extends HttpServlet {
 		String viewPage = command.exec(req, resp);
 		// notice/noticeList.tiles
 
+		// .tiles는 새로고침 x , .do는 새로고침 o ??
 		if (viewPage.endsWith(".tiles")) {
+			// RequestDispatcher : url은 그대로고 내용만 바뀜
 			RequestDispatcher rd = req.getRequestDispatcher(viewPage);
 			rd.forward(req, resp);
 
 		} else if (viewPage.endsWith(".do")) {
+			// .do는 링크로만 많이 둠 ?
+			// sendRedirect : service 처음부터 끝까지 실행한다?
 			resp.sendRedirect(viewPage);
 
 		} else if (viewPage.endsWith(".json")) {

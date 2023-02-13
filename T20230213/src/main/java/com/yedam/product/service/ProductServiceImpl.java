@@ -8,7 +8,7 @@ import com.yedam.common.DataSource;
 import com.yedam.product.mapper.ProductMapper;
 import com.yedam.product.vo.ProductVO;
 
-public class ProductServiceMybatis implements ProductService {
+public class ProductServiceImpl implements ProductService {
 	SqlSession session = DataSource.getInstance().openSession(true);
 	ProductMapper mapper = session.getMapper(ProductMapper.class);
 	@Override

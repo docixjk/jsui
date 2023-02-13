@@ -13,5 +13,12 @@
 		SELECT * FROM product WHERE product_code=#{code}
 	</select>
 	
-	
+	<select id="relatedList" resultType="ProductVO">
+     <![CDATA[
+		select * from (
+		select * from product order by like_it desc
+		) where rownum <= 4
+     
+     ]]>
+	</select>
 </mapper>
