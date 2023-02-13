@@ -33,9 +33,13 @@ public class FrontController extends HttpServlet {
 		
 		// 공지사항.
 		map.put("/noticeList.do", new NoticeList());
+		map.put("/noticeListWithTables.do", new NoticeListWithTable());
+		map.put("/noticeListAjax.do", new NoticeListAjax());
 		map.put("/noticeDetail.do", new NoticeDetail());
 		map.put("/noticeForm.do", new NoticeForm());// 글등록화면.
-		map.put("/noticeAdd.do", new NoticeAdd());// 글등록처리.
+		map.put("/noticeAdd.do", new NoticeAdd());// 글등록처리. 완료시 > 리스트 출력함
+		map.put("/noticeAddJson.do", new NoticeAddJson());
+		map.put("/noticeListJson.do", new NoticeListJson()); // json 포맷의 리스트
 
 		// 댓글.
 		map.put("/replyList.do", new ReplyList());//댓글목록.
