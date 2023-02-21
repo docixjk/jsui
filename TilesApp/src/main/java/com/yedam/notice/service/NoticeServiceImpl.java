@@ -62,4 +62,5 @@ public class NoticeServiceImpl implements NoticeService {
 		return mapper.insertReply(reply);
 	}
 
+
 }

@@ -56,4 +56,6 @@
 	values(#{replyId}, #{noticeId}, #{replyTitle}, #{replySubject}, #{replyWriter}, #{replyDate})
   </insert>
   
+  
+  
 </mapper>
